@@ -43,6 +43,7 @@ ol {
 }
 
 .content {
+  position: relative;
   display: flex;
   gap: 30px;
   margin: 133px 30px;
@@ -57,11 +58,12 @@ ol {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  height: 54px;
+  min-height: 54px;
 }
 
 
 .content__details {
+  position: relative;
   inline-size: 100%;
   display: flex;
   flex-direction: column;
@@ -79,7 +81,6 @@ ol {
   width: 711px;
   height: 386px;
   position: relative;
-
 }
 
 .result__video {
@@ -102,23 +103,33 @@ ol {
 }
 
 .content__video-card-description-container {
-  width: 200px;
-}
-
-
-
-.content__list {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.content__list li:empty{
+  display: none;
+}
+
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: scroll;
   height: 298px;
   gap: 30px;
+}
 
+.content__list::-webkit-scrollbar{
+  width: 0;
 }
 
 .content__list-item{
   display: flex;
-align-items: flex-start;
+  align-items: flex-start;
   width: 394px;
   padding: 2px 2px;
 }
@@ -133,7 +144,7 @@ align-items: flex-start;
 }
 
 .title {
-  
+  height: 210px;
   color: #FFF;
   font-family: Oswald, sans-serif;
   font-weight: 700;
@@ -148,23 +159,26 @@ align-items: flex-start;
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #FFF;
 }
 
 .content__video-card-title{
+  width: 200px;
   color: #FFF;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 1;
+  line-height: 100%;
   text-transform: uppercase;
-  padding: 2px 2px 5px 2px;
+  
 }
 
 .content__video-card-description {
-  padding: 0 2px;
+  width: 200px;
   color: #FFF;
+  font-size: 18px;
   font-weight: 400;
   line-height: 16.2px;
 }
@@ -187,7 +201,6 @@ align-items: flex-start;
   gap: 5px;
   align-items: flex-start;
 }
-
 
 .search-form__label {
   display: flex;
@@ -285,8 +298,7 @@ align-items: flex-start;
 }
 
 .search-form__textfield:focus {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+  outline: none;
 }
 
 .search-form__textfield:active {
@@ -321,12 +333,6 @@ align-items: flex-start;
 
 .search-form__submit-button {
   align-self: flex-end;
-}
-
-.content__card-link {
-  display: block;
-  margin: 2px;
-  text-decoration: none;
 }
 
 .content__card-link_current {
